@@ -1,0 +1,13 @@
+{
+  "name": "cyberpunk",
+  "items": [
+    { "title": "USA", "height": 10 },
+    { "title": "1980-OGGI", "height": 9 },
+    { "title": "NEON", "height": 8 },
+    { "title": "DISTOPIA TECNOLOGICA", "height": 7 },
+    { "title": "GLITCH", "height": 6 },
+    { "title": "MEGACORPORAZIONI", "height": 5 },
+    { "title": "HACKING", "height": 3 },
+    { "title": "PHILIP K. DICK, BLADE RUNNER", "height": 2 }
+  ]
+}

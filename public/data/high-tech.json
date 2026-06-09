@@ -1,0 +1,13 @@
+{
+  "name": "high-tech",
+  "items": [
+    { "title": "REGNO UNITO", "height": 10 },
+    { "title": "1970-1990", "height": 9 },
+    { "title": "STRUTTURA PORTANTE", "height": 8 },
+    { "title": "TECNOLOGIA", "height": 7 },
+    { "title": "ACCIAIO", "height": 6 },
+    { "title": "FUNZIONALISMO RADICALE", "height": 5 },
+    { "title": "ROGERS, FOSTER", "height": 3 },
+    { "title": "EDIFICIO COME MACCHINA", "height": 2 }
+  ]
+}

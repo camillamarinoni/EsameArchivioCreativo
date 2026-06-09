@@ -1,0 +1,13 @@
+{
+  "name": "grunge-design",
+  "items": [
+    { "title": "USA", "height": 10 },
+    { "title": "1989-1999", "height": 9 },
+    { "title": "TIPOGRAFIA ROTTA", "height": 8 },
+    { "title": "TEXTURE USURATE", "height": 7 },
+    { "title": "CULTURA PUNK", "height": 6 },
+    { "title": "ESTETICA XEROX E FANZINE", "height": 5 },
+    { "title": "DAVID CARSON", "height": 3 },
+    { "title": "RIFIUTO DELLA CORPORATE", "height": 2 }
+  ]
+}

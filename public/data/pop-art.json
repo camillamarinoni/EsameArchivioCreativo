@@ -1,0 +1,13 @@
+{
+  "name": "pop-art",
+  "items": [
+    { "title": "USA", "height": 10 },
+    { "title": "1955-1970", "height": 9 },
+    { "title": "PUBBLICITà", "height": 8 },
+    { "title": "FUMETTO", "height": 7 },
+    { "title": "TINTE PIATTE", "height": 6 },
+    { "title": "CONSUMISMO IRONICO", "height": 5 },
+    { "title": "WARHOL, LICHTENTEIN", "height": 3 },
+    { "title": "RIPETIZIONE", "height": 2 }
+  ]
+}

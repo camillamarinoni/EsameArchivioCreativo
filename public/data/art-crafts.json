@@ -1,0 +1,13 @@
+{
+  "name": "art-crafts",
+  "items": [
+    { "title": "INGHILTERRA", "height": 10 },
+    { "title": "1880-1910", "height": 9 },
+    { "title": "ARTIGIANALITà MANUALE", "height": 8 },
+    { "title": "NO FABBRICA", "height": 7 },
+    { "title": "LEGNO", "height": 6 },
+    { "title": "BELLEZZA DELL'UTILE", "height": 5 },
+    { "title": "WILLIAM MORRIS", "height": 3 },
+    { "title": "CERAMICA", "height": 2 }
+  ]
+}

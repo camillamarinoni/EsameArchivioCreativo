@@ -1,0 +1,13 @@
+{
+  "name": "psychedelic",
+  "items": [
+    { "title": "USA", "height": 10 },
+    { "title": "1965-1975", "height": 9 },
+    { "title": "ALLUCINAZIONE VISIVA", "height": 8 },
+    { "title": "TIPOGRAFIA FLUIDA", "height": 7 },
+    { "title": "COLORI ACIDI", "height": 6 },
+    { "title": "CONTROCULTURA HIPPIE", "height": 5 },
+    { "title": "MUSICA ROCK", "height": 3 },
+    { "title": "SIMMETRIA SPECULARE", "height": 2 }
+  ]
+}

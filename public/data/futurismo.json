@@ -1,0 +1,13 @@
+{
+  "name": "futurismo",
+  "items": [
+    { "title": "ITALIA", "height": 10 },
+    { "title": "1909-1944", "height": 9 },
+    { "title": "VELOCITà", "height": 8 },
+    { "title": "MOVIMENTO", "height": 7 },
+    { "title": "MACCHINA", "height": 6 },
+    { "title": "ROTTURA CON IL PASSATO", "height": 5 },
+    { "title": "SIMULTANEITA VISIVA", "height": 3 },
+    { "title": "MANIFESTO DI MARINETTI", "height": 2 }
+  ]
+}

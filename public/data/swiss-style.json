@@ -1,0 +1,13 @@
+{
+  "name": "swiss-style",
+  "items": [
+    { "title": "SVIZZERA", "height": 10 },
+    { "title": "1950-1970", "height": 9 },
+    { "title": "TIPOGRAFIA RIGIDA", "height": 8 },
+    { "title": "HELVETICA", "height": 7 },
+    { "title": "OGGETTIVITà VISIVA", "height": 6 },
+    { "title": "ALLINEAMENTO A SINISTRA", "height": 5 },
+    { "title": "COMUNICAZIONE NEUTRA", "height": 3 },
+    { "title": "MÜLLER-BROCKMANN", "height": 2 }
+  ]
+}

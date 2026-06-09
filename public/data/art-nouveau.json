@@ -1,0 +1,13 @@
+{
+  "name": "art-nouveau",
+  "items": [
+    { "title": "FRANCIA", "height": 10 },
+    { "title": "1890-1910", "height": 9 },
+    { "title": "LINEA CURVA", "height": 8 },
+    { "title": "FLORA & FAUNA", "height": 7 },
+    { "title": "ORNAMENTO", "height": 6 },
+    { "title": "VETRO SOFFIATO", "height": 5 },
+    { "title": "GAUDì", "height": 3 },
+    { "title": "ARTE QUOTIDIANA", "height": 2 }
+  ]
+}

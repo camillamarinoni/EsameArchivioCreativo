@@ -1,0 +1,13 @@
+{
+  "name": "bauhaus",
+  "items": [
+    { "title": "GERMANIA", "height": 10 },
+    { "title": "1919-1933", "height": 9 },
+    { "title": "ARTE DELL'INDUSTRIA", "height": 8 },
+    { "title": "FORMA FUNZIONALE", "height": 7 },
+    { "title": "GRIGLIA E MODULARITà", "height": 6 },
+    { "title": "TIPOGRAFIA RAZIONALE", "height": 5 },
+    { "title": "WALTER GROPIUS, KANDINSKY", "height": 3 },
+    { "title": "LABORATORIO", "height": 2 }
+  ]
+}
