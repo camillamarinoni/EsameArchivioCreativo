@@ -8,7 +8,7 @@ useHeroCanvas(canvasRef)
 </script>
 
 <template>
-  <section class="h-[80vh] flex items-center justify-center py-20 overflow-visible">
+  <section class="hero">
     <canvas ref="canvasRef"></canvas>
   </section>
 </template>

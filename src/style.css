@@ -1,8 +1,7 @@
-@import "tailwindcss";
-
-@theme {
-  --color-fg: var(--fg);
-  --color-bg: var(--bg);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -26,14 +25,239 @@ body {
   transition: 0.4s;
 }
 
-@layer base {
-  button {
-    border: none;
-    cursor: pointer;
+/* NAV */
+.navbar {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 1fr 60px;
+  height: 56px;
+  border: 2px solid var(--fg);
+}
+
+.navbar .cell:last-child {
+  border-right: none;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    grid-template-columns: 90px 150px 180px 1fr 90px;
+    height: 64px;
   }
 }
 
-@keyframes loop {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid var(--fg);
+  text-decoration: none;
+  font-size: clamp(9px, 2vw, 14px);
+  letter-spacing: 0.05em;
+  color: var(--fg);
 }
+
+.logo img {
+  width: 35px;
+}
+
+.grow {
+  width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+button img {
+  width: 34px;
+}
+
+/* HERO */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  overflow: visible;
+}
+
+/* TICKER */
+.ticker {
+  height: 55px;
+  overflow: hidden;
+  border-top: 2px solid var(--fg);
+  border-bottom: 2px solid var(--fg);
+  display: flex;
+  align-items: center;
+}
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: loop 14s linear infinite;
+}
+
+.ticker span {
+  font-size: clamp(10px, 3vw, 20px);
+  margin-right: 120px;
+}
+
+@keyframes loop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ARCHIVE */
+.archive {
+  padding: 20px;
+  min-height: 850px;
+}
+
+.word-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.word {
+  font-size: clamp(16px, 4vw, 25px);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: left;
+  padding: 0;
+}
+
+.word:hover {
+  transform: translateX(15px);
+  opacity: 0.5;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+}
+
+.footerTitle {
+  font-size: clamp(35px, 15px + 5vw, 95px);
+  font-weight: 800;
+  line-height: 0.95;
+}
+
+.footerTitle span {
+  display: block;
+  font-size: clamp(12px, 2vw, 18px);
+  font-weight: 400;
+}
+
+.footerBottom {
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr;
+  border: 2px solid var(--fg);
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .footerBottom {
+    grid-template-columns: 90px 150px 250px;
+  }
+}
+
+.footerBottom div {
+  padding: clamp(10px, 2vw, 20px);
+  border-right: 2px solid var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(9px, 2vw, 14px);
+  text-align: center;
+}
+
+.footerBottom div:last-child {
+  border-right: none;
+}
+
+.footerBottom img {
+  width: clamp(20px, 4vw, 30px);
+}
+
+/* PAGES */
+.page {
+  position: relative;
+  background: var(--bg);
+  width: 100%;
+  flex: 1;
+}
+
+.detail-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  padding: 48px 24px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.content h1 {
+  font-size: clamp(2rem, 6vw, 5rem);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.close {
+  border: 2px solid var(--fg);
+  padding: 12px 30px;
+  margin-top: 24px;
+  margin-bottom: 0;
+  color: var(--fg);
+  display: inline-block;
+  font-size: clamp(8px, 2vw, 16px);
+}
+
+/* ABOUT */
+.about-shell {
+  min-height: 100vh;
+}
+
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+@media (max-width: 767px) {
+  .about-grid > * {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      ".      intro"
+      "title  segno"
+      "subtitle ."
+      ".      forma";
+    gap: 4rem 3rem;
+    padding: 6rem 3rem 4rem;
+    align-items: start;
+  }
+}
+
+.intro    { grid-area: intro; max-width: 22rem; justify-self: end; }
+.title    { grid-area: title; }
+.subtitle { grid-area: subtitle; max-width: 22rem; }
+.segno    { grid-area: segno; max-width: 22rem; justify-self: end; }
+.forma    { grid-area: forma; max-width: 28rem; justify-self: end; }

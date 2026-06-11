@@ -417,12 +417,12 @@ onBeforeUnmount(() => {
     <div
       v-if="state.landscape?.items?.length"
       ref="sceneWrap"
-      class="relative w-full h-[50vh] md:h-[80vh] bg-white"
+      style="position: relative; width: 100%; height: 60vw; max-height: 80vh; min-height: 300px; background: #fff;"
     >
-      <div ref="sceneMount" class="absolute inset-0" />
-      <div ref="labelsMount" class="pointer-events-none absolute inset-0" />
+      <div ref="sceneMount" style="position: absolute; inset: 0;" />
+      <div ref="labelsMount" style="pointer-events: none; position: absolute; inset: 0;" />
     </div>
-    <p v-else class="p-8 text-center">
+    <p v-else style="padding: 2rem; text-align: center;">
       Landscape JSON missing <code>items</code>.
     </p>
   </div>
