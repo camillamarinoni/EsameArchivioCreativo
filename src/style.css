@@ -223,41 +223,41 @@ footer {
 }
 
 /* ABOUT */
-.about-shell {
-  min-height: 100vh;
+.about-shell,
+.about-section {
+  min-height: unset;
+}
+
+@media (min-width: 1024px) {
+  .about-shell,
+  .about-section {
+    min-height: 100vh;
+  }
 }
 
 .about-grid {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2.5rem 1.5rem 3rem;
-}
-
-@media (max-width: 767px) {
-  .about-grid > * {
-    text-align: left;
-  }
+  padding: 3rem 1.5rem 2rem;
 }
 
 @media (min-width: 768px) {
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
     grid-template-areas:
-      ".      intro"
-      "title  segno"
-      "subtitle ."
-      ".      forma";
-    gap: 4rem 3rem;
-    padding: 6rem 3rem 4rem;
-    align-items: start;
+      "intro    ."
+      "title    title"
+      "subtitle segno"
+      ".        forma";
+    gap: 2rem 4rem;
+    padding: 3rem 5rem 2rem;
   }
-}
 
-.intro    { grid-area: intro; max-width: 22rem; justify-self: end; }
-.title    { grid-area: title; }
-.subtitle { grid-area: subtitle; max-width: 22rem; }
-.segno    { grid-area: segno; max-width: 22rem; justify-self: end; }
-.forma    { grid-area: forma; max-width: 28rem; justify-self: end; }
+  .intro    { grid-area: intro; max-width: 22rem; justify-self: start; text-align: left; }
+  .title    { grid-area: title; }
+  .subtitle { grid-area: subtitle; max-width: 22rem; }
+  .segno    { grid-area: segno; max-width: 26rem; justify-self: end; text-align: left; }
+  .forma    { grid-area: forma; max-width: 26rem; justify-self: end; text-align: left; }
+}
