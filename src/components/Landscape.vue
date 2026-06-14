@@ -14,6 +14,15 @@ import {
   CSS2DRenderer,
   CSS2DObject,
 } from 'three/addons/renderers/CSS2DRenderer.js'
+import { useTheme } from '../composables/useTheme'
+
+const { isDark } = useTheme()
+
+function getThemeColors() {
+  return isDark.value
+    ? { bg: 0x000000, wire: 0xffffff, solid: 0x000000, labelBg: '#000', labelFg: '#fff', labelBorder: '#fff', lineBg: '#fff' }
+    : { bg: 0xffffff, wire: 0x000000, solid: 0xffffff, labelBg: '#fff', labelFg: '#000', labelBorder: '#000', lineBg: '#000' }
+}
 
 const props = defineProps({
   landscapeData: {
@@ -222,19 +231,20 @@ function updateLabels(peaks) {
       transform: translateX(-14px) translateY(-100%);
     `
 
+    const colors = getThemeColors()
     const flag = document.createElement('div')
     flag.style.cssText = `
       display: flex;
       align-items: center;
       gap: ${gap};
-      border: 1px solid #000;
-      background: #fff;
+      border: 1px solid ${colors.labelBorder};
+      background: ${colors.labelBg};
       padding: ${padding};
       font-family: Inter, sans-serif;
       font-size: ${fontSize};
       font-weight: 700;
       letter-spacing: 0.08em;
-      color: #000;
+      color: ${colors.labelFg};
       white-space: nowrap;
     `
 
@@ -252,7 +262,7 @@ function updateLabels(peaks) {
     line.style.cssText = `
       width: 2px;
       height: ${lineHeight};
-      background: #000;
+      background: ${colors.lineBg};
       margin-left: ${lineMargin};
     `
 
@@ -335,7 +345,7 @@ function initThree() {
   labelRenderer.setSize(w, h)
 
   scene = new THREE.Scene()
-  scene.background = new THREE.Color(0xffffff)
+  scene.background = new THREE.Color(getThemeColors().bg)
 
   camera = new THREE.PerspectiveCamera(38, w / h, 0.1, 2000)
   camera.position.copy(defaultCamPos)
@@ -357,8 +367,9 @@ function initThree() {
   )
   terrainGeom.rotateX(-Math.PI / 2)
 
+  const colors = getThemeColors()
   const terrainMatSolid = new THREE.MeshBasicMaterial({
-    color: 0xffffff,
+    color: colors.solid,
     side: THREE.FrontSide,
   })
   terrainSolid = new THREE.Mesh(terrainGeom, terrainMatSolid)
@@ -366,7 +377,7 @@ function initThree() {
   scene.add(terrainSolid)
 
   const terrainMatWire = new THREE.MeshBasicMaterial({
-    color: 0x000000,
+    color: colors.wire,
     wireframe: true,
   })
   terrain = new THREE.Mesh(terrainGeom, terrainMatWire)
@@ -395,6 +406,19 @@ function initThree() {
   resizeObserver.observe(sceneWrap.value)
 }
 
+function applyThemeColors() {
+  if (!scene) return
+  const colors = getThemeColors()
+  scene.background = new THREE.Color(colors.bg)
+  if (terrain?.material) terrain.material.color.set(colors.wire)
+  if (terrainSolid?.material) terrainSolid.material.color.set(colors.solid)
+  rebuildTerrain()
+}
+
+watch(isDark, () => {
+  applyThemeColors()
+})
+
 watch(
   () => props.landscapeData,
   () => syncLandscapeFromProp(),
@@ -417,7 +441,7 @@ onBeforeUnmount(() => {
     <div
       v-if="state.landscape?.items?.length"
       ref="sceneWrap"
-      style="position: relative; width: 100%; height: 60vw; max-height: 80vh; min-height: 300px; background: #fff;"
+      :style="{ position: 'relative', width: '100%', height: '60vw', maxHeight: '80vh', minHeight: '300px', background: isDark ? '#000' : '#fff' }"
     >
       <div ref="sceneMount" style="position: absolute; inset: 0;" />
       <div ref="labelsMount" style="pointer-events: none; position: absolute; inset: 0;" />
