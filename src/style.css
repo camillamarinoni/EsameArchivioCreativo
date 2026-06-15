@@ -222,15 +222,6 @@ footer {
   font-size: clamp(8px, 2vw, 16px);
 }
 
-@media (max-width: 767px) {
-  .content {
-    padding-bottom: 12px;
-  }
-  .close {
-    margin-top: 12px;
-  }
-}
-
 /* ABOUT */
 .about-shell,
 .about-section {
